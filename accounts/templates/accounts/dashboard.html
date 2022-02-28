@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block 'conteudo' %}
-  Dashboard
-
+{% block conteudo %}
+<h1 class="mt-3 mb-3">Olá {{ user.first_name | title }} {{ user.last_name | title}}</h1>
+{% include 'parciais/_messages.html' %}
 {% endblock %}
