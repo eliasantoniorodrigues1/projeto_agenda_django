@@ -7,4 +7,24 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{%url 'index'%}">Início <span class="sr-only">(current)</span></a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{%url 'dashboard'%}">Dashboard</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{%url 'logout'%}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{%url 'login'%}">Logar</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
   </nav>
